@@ -1,4 +1,9 @@
+# 
 # maxima-circuits
+
+This is a fork of the original at https://github.com/tedyapo/maxima-circuits by tedyapo.
+My additions are in the files circuitsLH.mac and circuits.wxm.
+
 Maxima functions for circuit calculations
 
 See also the accompanying [Hackaday article](https://hackaday.com/2019/02/28/computer-algebra-for-electronic-design/).

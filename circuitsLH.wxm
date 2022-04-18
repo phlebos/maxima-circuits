@@ -1,0 +1,60 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 21.05.2 ] */
+/* [wxMaxima: input   start ] */
+load("circuits.mac")$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Add arbitary length list of resistances together.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rT([x]) := lsum(i,i,x) $
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Current through resistor
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rI(v, r) := v/r$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Voltage across resistor
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rV(i,r) := i*r$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Voltage across a single resistor in a divider. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vDiv(v,rt,r) := rV( rI(v ,rt), r)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Voltage across each resistor in a divider consisting of an arbitary length list of resistors.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vDivm(v,[r]) := map( lambda([r1],vDiv(v, apply(rT,r), r1)),r)$
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 21.05.2"$
